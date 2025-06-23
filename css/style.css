@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  padding: 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+:root {
+  --primary-color: #0a97bb;
+  --bold-primary-color: #216f83;
+  --red-color: rgb(239, 58, 58);
+  --tin-red-color: rgba(243, 101, 101, 0.885);
+}
+body {
+  font-family: sans-serif;
+}

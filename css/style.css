@@ -86,3 +86,17 @@ body {
   box-shadow: 0 0 2px var(--bold-primary-color);
 }
 
+.Violations {
+  color: rgba(255, 0, 0, 0.674);
+  text-align: left;
+}
+.todoForm .container form button {
+  padding: 8px;
+  background: var(--primary-color);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* ------------ todo form end------------------ */

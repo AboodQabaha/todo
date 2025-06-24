@@ -169,3 +169,6 @@ body {
 .todoList .container .Tasks .task .actions i {
   cursor: pointer;
 }
+.todoList .container .Tasks .task .actions .edit {
+  color: gold;
+}

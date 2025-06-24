@@ -183,3 +183,6 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
+.todoList .container .DeleteActions li:hover {
+  background: var(--tin-red-color);
+}

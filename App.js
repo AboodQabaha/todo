@@ -75,3 +75,13 @@ const showData = (todos) => {
     TasksContainer.insertAdjacentHTML("beforeend", Task);
   });
 };
+const setDone = (index) => {
+  let categories = document.querySelectorAll(
+    ".todoList .container .pagination li"
+  );
+  categories.forEach((cat) => cat.classList.remove("active"));
+  categories[0].classList.add("active"); // All
+  todosArray[index].isDone = !todosArray[index].isDone;
+  showData(todosArray);
+  setLocalStorage("todos_array", todosArray);
+};

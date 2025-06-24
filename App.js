@@ -133,3 +133,7 @@ const handleDeleteAction = (actionType) => {
       console.error("Action does not exist :(");
       return;
   }
+   setLocalStorage("todos_array", todosArray);
+  showData(todosArray);
+  deleteActionAlert.classList.remove("active");
+};

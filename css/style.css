@@ -139,3 +139,6 @@ body {
   overflow-y: auto;
   max-height: calc(80vh - 60.8px);
 }
+.todoList .container .Tasks::-webkit-scrollbar {
+  width: 3px;
+}

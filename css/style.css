@@ -172,3 +172,6 @@ body {
 .todoList .container .Tasks .task .actions .edit {
   color: gold;
 }
+.todoList .container .Tasks .task .actions .remove {
+  color: red;
+}

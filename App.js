@@ -146,3 +146,58 @@ deleteActions.forEach((action) => {
   });
 });
 showData(todosArray);
+// تعديل المهمة
+const renameTaskFun = (index) => {
+  const renameTask = document.querySelector(".renameTask");
+  const newTaskInput = renameTask.querySelector(".newTaskInput");
+  const RenamTaskErrorsContainer = renameTask.querySelector("#violations");
+  const saveBtn = renameTask.querySelector(".saveBtn");
+  const cancelBtn = renameTask.querySelector(".cancelBtn");
+  RenamTaskErrorsContainer.textContent = "";
+
+  const TargetTask = todosArray[index];
+  newTaskInput.value = TargetTask.description;
+  renameTask.classList.add("active");
+
+  cancelBtn.onclick = () => {
+    renameTask.classList.remove("active");
+  };
+
+  saveBtn.onclick = () => {
+    let error = validateTodo(newTaskInput.value);
+    if (error) {
+      RenamTaskErrorsContainer.textContent = error;
+    } else {
+      RenamTaskErrorsContainer.textContent = "";
+      TargetTask.description = newTaskInput.value;
+      todosArray[index] = TargetTask;
+      showData(todosArray);
+      renameTask.classList.remove("active");
+      setLocalStorage("todos_array", todosArray);
+    }
+  };
+};
+
+
+const removeTask = (targetIndex) => {
+  const deleteAction = document.querySelector(".deleteAction");
+  const deleteActionH2 = deleteAction.querySelector("h2");
+  const deleteActionP = deleteAction.querySelector("p");
+  const confirmBtn = deleteAction.querySelector(".confirm");
+  const cancelBtn = deleteAction.querySelector(".cancel");
+
+  deleteActionH2.textContent = "Delete Task";
+  deleteActionP.textContent = "are you sure you want to delete this task";
+  deleteAction.classList.add("active");
+
+  confirmBtn.onclick = () => {
+    todosArray = todosArray.filter((_, index) => index !== targetIndex);
+    showData(todosArray);
+    setLocalStorage("todos_array", todosArray);
+    deleteAction.classList.remove("active");
+  };
+
+  cancelBtn.onclick = () => {
+    deleteAction.classList.remove("active");
+  };
+};

@@ -85,3 +85,26 @@ const setDone = (index) => {
   showData(todosArray);
   setLocalStorage("todos_array", todosArray);
 };
+let categories = document.querySelectorAll(
+  ".todoList .container .pagination li"
+);
+categories.forEach((cat) => {
+  cat.onclick = () => {
+    categories.forEach((c) => c.classList.remove("active"));
+    cat.classList.add("active");
+    const category = cat.getAttribute("data-category");
+    switch (category) {
+      case "all":
+        showData(todosArray);
+        break;
+      case "done":
+        showData(todosArray.filter((todo) => todo.isDone));
+        break;
+      case "todo":
+        showData(todosArray.filter((todo) => !todo.isDone));
+        break;
+      default:
+        alert("category not found");
+    }
+  };
+});

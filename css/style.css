@@ -125,3 +125,9 @@ body {
   position: relative;
   top: 0;
 }
+.todoList .container .pagination li:hover,
+.todoList .container .pagination li.active {
+  background: var(--bold-primary-color);
+  box-shadow: 0 4px 14px var(--primary-color);
+  top: -3px;
+}

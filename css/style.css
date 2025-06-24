@@ -145,3 +145,6 @@ body {
 .todoList .container .Tasks::-webkit-scrollbar-track {
   background: #d9d9d9;
 }
+.todoList .container .Tasks::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}

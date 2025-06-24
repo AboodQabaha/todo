@@ -121,3 +121,7 @@ body {
   cursor: pointer;
   border-radius: 3px;
 }
+.todoList .container .pagination li {
+  position: relative;
+  top: 0;
+}

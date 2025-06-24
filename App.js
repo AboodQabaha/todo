@@ -145,3 +145,4 @@ deleteActions.forEach((action) => {
     cancelBtn.onclick = () => deleteActionAlert.classList.remove("active");
   });
 });
+showData(todosArray);

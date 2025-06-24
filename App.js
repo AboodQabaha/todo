@@ -137,3 +137,11 @@ const handleDeleteAction = (actionType) => {
   showData(todosArray);
   deleteActionAlert.classList.remove("active");
 };
+deleteActions.forEach((action) => {
+  action.addEventListener("click", () => {
+    const deleteType = action.getAttribute("data-deleteType");
+    deleteActionAlert.classList.add("active");
+    confirmBtn.onclick = () => handleDeleteAction(deleteType);
+    cancelBtn.onclick = () => deleteActionAlert.classList.remove("active");
+  });
+});

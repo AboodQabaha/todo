@@ -108,3 +108,11 @@ categories.forEach((cat) => {
     }
   };
 });
+const deleteActions = document.querySelectorAll(
+  ".todoList .container .DeleteActions li"
+);
+const deleteActionAlert = document.querySelector(".deleteAction");
+const deleteActionH2 = deleteActionAlert.querySelector("h2");
+const deleteActionP = deleteActionAlert.querySelector("p");
+const confirmBtn = deleteActionAlert.querySelector(".confirm");
+const cancelBtn = deleteActionAlert.querySelector(".cancel");

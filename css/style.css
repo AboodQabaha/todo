@@ -178,3 +178,8 @@ body {
 .todoList .container .DeleteActions li {
   background: var(--red-color);
 }
+.todoList .container .DeleteActions li.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

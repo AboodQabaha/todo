@@ -116,3 +116,20 @@ const deleteActionH2 = deleteActionAlert.querySelector("h2");
 const deleteActionP = deleteActionAlert.querySelector("p");
 const confirmBtn = deleteActionAlert.querySelector(".confirm");
 const cancelBtn = deleteActionAlert.querySelector(".cancel");
+const handleDeleteAction = (actionType) => {
+  switch (actionType) {
+    case "DeleteDone":
+      deleteActionH2.textContent = "Delete Done Tasks";
+      deleteActionP.textContent =
+        "Are you sure you want to delete completed tasks?";
+      todosArray = todosArray.filter((todo) => !todo.isDone);
+      break;
+    case "DeleteAll":
+      deleteActionH2.textContent = "Delete All Tasks";
+      deleteActionP.textContent = "Are you sure you want to delete all tasks?";
+      todosArray = [];
+      break;
+    default:
+      console.error("Action does not exist :(");
+      return;
+  }

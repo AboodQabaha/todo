@@ -148,3 +148,12 @@ body {
 .todoList .container .Tasks::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
 }
+.todoList .container .Tasks .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 10px;
+  border: solid 1px rgb(193, 191, 191);
+  box-shadow: 0 0 3px #cfcece;
+}

@@ -166,3 +166,6 @@ body {
   gap: 10px;
   align-items: center;
 }
+.todoList .container .Tasks .task .actions i {
+  cursor: pointer;
+}

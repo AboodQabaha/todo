@@ -111,3 +111,13 @@ body {
   gap: 10px;
   list-style: none;
 }
+.todoList .container .pagination li,
+.todoList .container .DeleteActions li {
+  background: var(--primary-color);
+  padding: 6px;
+  color: #fff;
+  flex-grow: 1;
+  transition: 400ms;
+  cursor: pointer;
+  border-radius: 3px;
+}

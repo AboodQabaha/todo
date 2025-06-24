@@ -100,3 +100,89 @@ body {
   cursor: pointer;
 }
 /* ------------ todo form end------------------ */
+.todoList {
+  height: 100vh;
+}
+.todoList .container .pagination,
+.todoList .container .DeleteActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+}
+.todoList .container .pagination li,
+.todoList .container .DeleteActions li {
+  background: var(--primary-color);
+  padding: 6px;
+  color: #fff;
+  flex-grow: 1;
+  transition: 400ms;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.todoList .container .pagination li {
+  position: relative;
+  top: 0;
+}
+.todoList .container .pagination li:hover,
+.todoList .container .pagination li.active {
+  background: var(--bold-primary-color);
+  box-shadow: 0 4px 14px var(--primary-color);
+  top: -3px;
+}
+.todoList .container .Tasks {
+  padding-right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: calc(80vh - 60.8px);
+}
+.todoList .container .Tasks::-webkit-scrollbar {
+  width: 3px;
+}
+.todoList .container .Tasks::-webkit-scrollbar-track {
+  background: #d9d9d9;
+}
+.todoList .container .Tasks::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+.todoList .container .Tasks .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 10px;
+  border: solid 1px rgb(193, 191, 191);
+  box-shadow: 0 0 3px #cfcece;
+}
+.todoList .container .Tasks .task.done p {
+  text-decoration: line-through;
+  color: rgb(243, 89, 89);
+}
+.todoList .container .Tasks .task .actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.todoList .container .Tasks .task .actions i {
+  cursor: pointer;
+}
+.todoList .container .Tasks .task .actions .edit {
+  color: gold;
+}
+.todoList .container .Tasks .task .actions .remove {
+  color: red;
+}
+.todoList .container .DeleteActions li {
+  background: var(--red-color);
+}
+.todoList .container .DeleteActions li.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.todoList .container .DeleteActions li:hover {
+  background: var(--tin-red-color);
+}

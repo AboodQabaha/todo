@@ -40,7 +40,38 @@ createNewTodoBtn.onclick = () => {
   let error = validateTodo(newTodo.description);
   if (!error) {
     todosArray.push(newTodo);
+     showData(todosArray);
     descriptionInput.value = "";
     setLocalStorage("todos_array", todosArray);
   }
+};
+const showData = (todos) => {
+  const deleteActions = document.querySelectorAll(
+    ".todoList .container .DeleteActions li"
+  );
+  deleteActions.forEach((action) => {
+    if (todosArray.length > 0) {
+      action.classList.remove("disabled");
+    } else {
+      action.classList.add("disabled");
+    }
+  });
+
+  const TasksContainer = document.querySelector("#Tasks");
+  TasksContainer.innerHTML = "";
+  todos.forEach((todo, index) => {
+    let Task = `
+      <div class="task ${todo.isDone ? "done" : ""}">
+        <p class="description">${todo.description}</p>
+        <div class="actions">
+          <input  type="checkbox" ${
+            todo.isDone ? "checked" : ""
+          } onchange="setDone(${index})">
+          <i class="fa-solid fa-pencil edit" onclick="renameTaskFun(${index})"></i>
+          <i class="fa-solid fa-trash remove" onclick="removeTask(${index})"></i>
+        </div>
+      </div>
+    `;
+    TasksContainer.insertAdjacentHTML("beforeend", Task);
+  });
 };
